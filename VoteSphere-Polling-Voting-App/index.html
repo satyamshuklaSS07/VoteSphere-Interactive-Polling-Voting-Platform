@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VoteSphere — Polling & Voting App</title>
+  <meta name="description" content="Modern animated polling and voting dashboard built with HTML, CSS and JavaScript.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-orb orb-one"></div>
+  <div class="bg-orb orb-two"></div>
+  <div class="grid-bg"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">V</div>
+      <div>
+        <strong>Vote<span>Sphere</span></strong>
+        <small>Polling & Voting</small>
+      </div>
+    </div>
+    <div class="top-actions">
+      <span class="status-dot"></span><span>Live System</span>
+      <button class="icon-btn" id="themeBtn" title="Toggle theme">☀</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <div class="eyebrow"><span>●</span> COMMUNITY VOTING HUB</div>
+        <h1>Make your voice <span>count.</span></h1>
+        <p>Create polls, cast your vote and watch the results move in real time.</p>
+        <div class="hero-actions">
+          <button class="primary-btn" id="createBtn">＋ Create a Poll</button>
+          <button class="ghost-btn" id="scrollBtn">Explore Polls ↓</button>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="ring ring-1"></div>
+        <div class="ring ring-2"></div>
+        <div class="floating-card card-a">✓ <b>1,284</b><small>votes today</small></div>
+        <div class="vote-cube">V</div>
+        <div class="floating-card card-b">LIVE <b id="liveCount">3</b><small>active polls</small></div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat-card"><span>ACTIVE POLLS</span><strong id="statPolls">3</strong><i>↗</i></div>
+      <div class="stat-card"><span>TOTAL VOTES</span><strong id="statVotes">0</strong><i>↗</i></div>
+      <div class="stat-card"><span>YOUR VOTES</span><strong id="statMine">0</strong><i>✓</i></div>
+      <div class="stat-card"><span>VOTING STATUS</span><strong class="online">ONLINE</strong><i>●</i></div>
+    </section>
+
+    <section class="section-head" id="pollSection">
+      <div>
+        <div class="eyebrow">● LIVE POLLS</div>
+        <h2>Choose a poll. <span>Have your say.</span></h2>
+      </div>
+      <button class="filter-btn" id="resetBtn">Reset Demo Data</button>
+    </section>
+
+    <section class="poll-grid" id="pollGrid"></section>
+
+    <section class="how">
+      <div class="eyebrow">● HOW IT WORKS</div>
+      <h2>Simple. Fast. <span>Fair.</span></h2>
+      <div class="steps">
+        <div class="step"><b>01</b><div class="step-icon">＋</div><h3>Create</h3><p>Build a poll with multiple answer options.</p></div>
+        <div class="step"><b>02</b><div class="step-icon">✓</div><h3>Vote</h3><p>Pick one option. Every poll allows one vote per browser.</p></div>
+        <div class="step"><b>03</b><div class="step-icon">↗</div><h3>Discover</h3><p>See percentage-based results update instantly.</p></div>
+      </div>
+    </section>
+
+    <footer>VoteSphere <span>•</span> Built with HTML5, CSS3, JavaScript & LocalStorage</footer>
+  </main>
+
+  <div class="modal hidden" id="modal">
+    <div class="modal-box">
+      <button class="close" id="closeModal">×</button>
+      <div class="eyebrow">● NEW POLL</div>
+      <h2>Create a Poll</h2>
+      <p class="modal-sub">Ask a question and add at least two choices.</p>
+      <label>Question<input id="questionInput" placeholder="e.g. Which skill should we learn next?"></label>
+      <label>Options</label>
+      <div id="optionInputs">
+        <input class="option-input" placeholder="Option 1">
+        <input class="option-input" placeholder="Option 2">
+      </div>
+      <button class="add-option" id="addOption">＋ Add option</button>
+      <button class="primary-btn full" id="savePoll">Publish Poll</button>
+      <p class="error" id="error"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
